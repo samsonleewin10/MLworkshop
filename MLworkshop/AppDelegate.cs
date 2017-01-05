@@ -46,7 +46,7 @@ namespace MLworkshop
 			AppDelegate apdel = (AppDelegate)obj;
 			RootElement root = apdel._rootElement;
 
-			List<string> colNames = new List<string>();
+			List<string> colNames = new List<string>{ "age", "education", "marital-status", "race", "sex", "native-country" };
 			List<string> colVals = new List<string>();
 			int i = 0;
 
@@ -67,7 +67,7 @@ namespace MLworkshop
 									{
 										EntryElement input = (EntryElement)e2;
 										//Get input name and value and add to arrays
-										colNames.Add(input.Caption);
+										//colNames.Add(input.Caption);
 										colVals.Add(input.Value);
 										i++;
 									}
@@ -89,8 +89,8 @@ namespace MLworkshop
 		//Send API request to Azure ML RRS API
 		static async void InvokeRequestResponseService(List<string> colNames, List<string> colValues)
 		{
-			const string apiKey = "YDaO2fjCiidryIfpE4N2JkweN1A1EfViWVD+6jAg2llyhn9MVJ3WhQjiO1CSFN0yhpIEGL+P3hUD1EunTAy9Sg=="; // Replace this with the API key for the web service
-			const string apiUrl = "https://ussouthcentral.services.azureml.net/workspaces/f5e8e9bc4eed4034b78567449cfca779/services/278f86a1e8b4421b8b47a1c618805e2b/execute?api-version=2.0&details=true";
+			const string apiKey = "nH1fQBtXcWOSLrddNYJG4Bqx7l70xzXUP0p8t0s/M61oa5TCEhLmhskE0K4eURcNIZ8VfJugethCOVMyJ6kscg=="; // Replace this with the API key for the web service
+			const string apiUrl = "https://asiasoutheast.services.azureml.net/workspaces/50edb6832d9e4932bc7493e8fbc9e5c5/services/3b8561f2564344c588973c17228456d6/execute?api-version=2.0&details=true";
 
 			//Column names and values
 			StringTable stringTable = new StringTable();
@@ -129,6 +129,25 @@ namespace MLworkshop
 				{
 					//Get the result
 					string result = await response.Content.ReadAsStringAsync();
+
+					//Refine the result
+					if (result.Contains("Low"))
+					{
+						result = "Predicted Income Class is Low.";
+					}
+					else if (result.Contains("Medium"))
+					{
+						result = "Predicted Income Class is Medium";
+					}
+					else if (result.Contains("High"))
+					{
+						result = "Predicted Income Class is High.";
+					}
+					else if (result.Contains("Very High"))
+					{
+						result = "Predicted Income Class is Very High.";
+					}
+
 					//Show it to user
 					UIAlertView popup = new UIAlertView("Response", result, null, "Ok", null);
 					popup.Show();

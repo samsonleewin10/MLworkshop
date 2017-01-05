@@ -4,38 +4,56 @@
         {
             "header": "Web service input",
             "elements": [
+                
+                {
+                    "type": "entry",
+                    "caption": "Age",
+                    "value": "",
+                    "placeholder": "18",
+                    "keyboard": "numbers"
+                },
+
+                {
+                    "type": "entry",
+                    "caption": "Education",
+                    "value": "",
+                    "placeholder": "Bachelors"
+                },
+
+                {
+                    "type": "entry",
+                    "caption": "Marital Status",
+                    "value": "",
+                    "placeholder": "Never-married"
+                },
+
+                {
+                    "type": "entry",
+                    "caption": "Race",
+                    "value": "",
+                    "placeholder": "White"
+                },
+                
                 {
                     "type": "entry",
                     "caption": "Gender",
                     "value": "",
-                    "placeholder": "Sepal Length",
-                    "keyboard": "numbers"
+                    "placeholder": "Male"
                 },
+                
+
+
                 {
                     "type": "entry",
-                    "caption": "Col2",
+                    "caption": "Native Country",
                     "value": "",
-                    "placeholder": "Sepal Width",
-                    "keyboard": "numbers"
+                    "placeholder": "Canada"
                 },
-                 {
-                    "type": "entry",
-                    "caption": "Col3",
-                    "value": "",
-                    "placeholder": "Petal Length",
-                    "keyboard": "numbers"
-                },
-                {
-                    "type": "entry",
-                    "caption": "Col4",
-                    "value": "",
-                    "placeholder": "Petal Width",
-                    "keyboard": "numbers"
-                },
+                
                 {
                     "type": "string",
                     "caption": "Submit Request",
-                    "ontap": "IrisClassifier.AppDelegate.Callback",
+                    "ontap": "MLworkshop.AppDelegate.Callback",
                     "accessory": "checkmark",
                     "background": "#C7C7CC"
                 }
