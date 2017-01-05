@@ -1,0 +1,45 @@
+{
+    "title": "USA Income Class Prediction",
+    "sections": [
+        {
+            "header": "Web service input",
+            "elements": [
+                {
+                    "type": "entry",
+                    "caption": "Gender",
+                    "value": "",
+                    "placeholder": "Sepal Length",
+                    "keyboard": "numbers"
+                },
+                {
+                    "type": "entry",
+                    "caption": "Col2",
+                    "value": "",
+                    "placeholder": "Sepal Width",
+                    "keyboard": "numbers"
+                },
+                 {
+                    "type": "entry",
+                    "caption": "Col3",
+                    "value": "",
+                    "placeholder": "Petal Length",
+                    "keyboard": "numbers"
+                },
+                {
+                    "type": "entry",
+                    "caption": "Col4",
+                    "value": "",
+                    "placeholder": "Petal Width",
+                    "keyboard": "numbers"
+                },
+                {
+                    "type": "string",
+                    "caption": "Submit Request",
+                    "ontap": "IrisClassifier.AppDelegate.Callback",
+                    "accessory": "checkmark",
+                    "background": "#C7C7CC"
+                }
+            ]
+        }
+    ]
+}
